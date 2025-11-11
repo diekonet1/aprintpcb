@@ -1,0 +1,7 @@
+# Izinkan semua robot untuk mengakses semua bagian website
+User-agent: *
+Disallow:
+
+# Tunjukkan di mana sitemap Anda berada
+# Ganti dengan domain akhir Anda (aprintpcb.com)
+Sitemap: https://www.aprintpcb.com/sitemap.xml
