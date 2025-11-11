@@ -1,12 +1,4 @@
-/* --- 1. RESET DAN FONT DASAR --- */
-:root {
-    /* Definisi warna utama */
-    --primary-color: #007bff; /* Biru cerah, bagus untuk teknologi */
-    --secondary-color: #343a40; /* Abu-abu gelap untuk teks */
-    --light-bg: #f8f9fa; /* Latar belakang terang */
-    --dark-bg: #212529; /* Latar belakang gelap untuk footer/header */
-}
-
+/* RESET DASAR */
 * {
     margin: 0;
     padding: 0;
@@ -14,270 +6,182 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff; /* Latar belakang putih */
+    color: #333;
     line-height: 1.6;
-    color: var(--secondary-color);
-    background-color: white;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
-}
-
-/* --- 2. HEADER DAN NAVIGASI (Termasuk Logo) --- */
-header {
-    background: var(--dark-bg);
-    color: white;
-    padding: 10px 0;
-    position: sticky; /* Membuat header tetap di atas saat scroll */
-    top: 0;
-    z-index: 1000;
-}
-
-header .container {
+/* HEADER DAN NAVIGASI */
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 50px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
 }
 
-/* Penataan Logo dan Teks Judul */
-.logo-container {
-    display: flex; /* Membuat item (logo dan h1) berjejer horizontal */
-    align-items: center; /* Membuat mereka rata tengah secara vertikal */
+.nav-left span {
+    font-weight: 700;
+    color: #555;
 }
 
-.logo-img {
-    height: 60px; /* Atur ketinggian logo */
-    width: auto;
-    margin-right: 15px; /* Memberi jarak antara logo dan teks judul */
-    /* CATATAN: Pastikan Anda memiliki file 'logo.png' atau ganti namanya di HTML */
-}
-
-header h1 {
-    font-size: 2em;
-    margin: 0;
-    color: white;
-}
-header .logo-container::after {
-    content: 'PCB Fabrication & Design';
-    position: absolute;
-    top: 40px; 
-    left: 70px; 
-    font-size: 0.7em;
-    color: #ccc;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li a {
-    color: white;
+.nav-right a {
     text-decoration: none;
-    padding: 10px 15px;
-    display: block;
-    transition: background 0.3s;
+    color: #333;
+    margin-left: 25px;
+    font-weight: 400;
 }
 
-nav ul li a:hover {
-    background: var(--primary-color);
+.nav-right a:hover {
+    color: #007bff; /* Warna biru saat hover */
+}
+
+/* BAGIAN UTAMA (HERO) */
+.hero-section {
+    max-width: 1000px;
+    margin: 80px auto 50px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.logo-area img {
+    /* Atur ukuran logo agar terlihat baik */
+    max-height: 50px; 
+    margin-bottom: 30px;
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hero-section .description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* TOMBOL CTA */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Agar tombol responsif */
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    padding: 12px 25px;
     border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    white-space: nowrap; /* Mencegah teks tombol putus */
 }
 
-/* --- 3. SECTION UMUM --- */
-section {
-    padding: 60px 0;
+.btn-wa {
+    background-color: #00a852; /* Warna hijau untuk WA */
+}
+
+.btn-telp {
+    background-color: #007bff; /* Warna biru untuk Telp/umum */
+}
+
+.btn-wa:hover {
+    background-color: #008f44;
+}
+
+.btn-telp:hover {
+    background-color: #0056b3;
+}
+
+/* SEPARATOR GARIS */
+.separator {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1000px;
+}
+
+/* BAGIAN LAYANAN */
+.services-section {
+    max-width: 1000px;
+    margin: 50px auto 100px;
+    padding: 0 20px;
     text-align: center;
 }
 
-section h2, section h3 {
-    margin-bottom: 20px;
-    color: var(--secondary-color);
+.services-section h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
 }
 
-/* --- 4. HERO SECTION --- */
-#hero {
-    background: var(--light-bg);
-    padding: 100px 0;
-    color: var(--secondary-color);
-}
-
-#hero h2 {
-    font-size: 2.5em;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-}
-
-.cta-button {
-    display: inline-block;
-    background: var(--primary-color);
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.cta-button:hover {
-    background: #0056b3; /* Warna sedikit lebih gelap saat di-hover */
-}
-
-/* --- 5. LAYANAN SECTION --- */
-.layanan-section {
-    background: white;
-}
-
-.layanan-grid {
+.service-cards {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; 
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.layanan-item {
-    background: var(--light-bg);
-    padding: 25px;
-    border-radius: 8px;
-    flex-basis: calc(33% - 20px); 
-    text-align: left;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.layanan-item h4 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-/* --- 6. PORTOFOLIO SECTION STYLE --- */
-.portofolio-section {
-    background: var(--light-bg);
-}
-
-.portofolio-grid {
-    display: grid;
-    /* Membuat layout 3 kolom, setiap kolom ukurannya sama */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    justify-content: space-between;
     gap: 30px;
-    margin-top: 30px;
+    flex-wrap: wrap; 
 }
 
-.portofolio-item {
-    background: white;
-    padding-bottom: 20px;
+.card {
+    flex: 1; /* Agar membagi ruang sama rata */
+    min-width: 280px; /* Minimal lebar card untuk responsif */
+    background-color: #f9f9f9;
+    padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     text-align: left;
-    overflow: hidden; 
     transition: transform 0.3s;
 }
 
-.portofolio-item:hover {
-    transform: translateY(-5px); /* Efek mengangkat sedikit saat di-hover */
+.card:hover {
+    transform: translateY(-5px); /* Efek sedikit naik saat dihover */
 }
 
-.portofolio-item img {
-    width: 100%;
-    height: 200px; /* Tinggi tetap untuk semua gambar */
-    object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
+.card h3 {
+    font-size: 18px;
+    color: #007bff;
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
-.portofolio-item h4 {
-    color: var(--secondary-color);
-    padding: 0 20px;
-    margin-bottom: 10px;
+.card p {
+    font-size: 15px;
+    color: #666;
 }
 
-.portofolio-item p {
-    font-size: 0.9em;
-    padding: 0 20px;
-    margin-bottom: 15px;
-}
-
-.detail-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0 20px;
-    display: inline-block;
-}
-
-/* --- 7. KONTAK SECTION (Formulir) --- */
-.kontak-section {
-    background: #e9ecef;
-}
-
-.kontak-section form {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.kontak-section input[type="text"],
-.kontak-section input[type="email"],
-.kontak-section textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 1em;
-}
-
-.kontak-section textarea {
-    resize: vertical; /* Hanya izinkan resize secara vertikal */
-}
-
-.kontak-section button.cta-button {
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-/* --- 8. FOOTER --- */
-footer {
-    background: var(--secondary-color);
-    color: white;
-    padding: 15px 0;
-    text-align: center;
-    font-size: 0.9em;
-}
-
-
-/* --- 9. RESPONSIF (Tampilan di Ponsel) --- */
-
-@media (max-width: 768px) {
-    
-    /* Header di Ponsel */
-    header .container {
-        flex-direction: column; /* Tumpuk logo/judul dan navigasi */
+/* RESPONSIVENESS */
+@media (max-width: 900px) {
+    .service-cards {
+        justify-content: center;
     }
+}
 
-    nav ul {
+@media (max-width: 600px) {
+    .header {
         flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    nav ul li {
-        width: 100%;
         text-align: center;
     }
-
-    /* Layanan di Ponsel */
-    .layanan-item {
-        flex-basis: 100%; /* Setiap item layanan mengambil satu baris penuh */
+    .nav-right a {
+        margin: 0 10px;
+        display: inline-block;
+    }
+    .hero-section h1 {
+        font-size: 28px;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
     }
 }
